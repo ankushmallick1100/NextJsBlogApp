@@ -1,9 +1,14 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from '@/styles/Home.module.css'
+// import style1 from '@/styles/Home1.module.css'
+// import style2 from '@/styles/Home2.module.css'
+
 
 
 export default function Home() {
+  console.log(styles)
   return (
     <div className={styles.container}>
       <Head>
@@ -15,10 +20,10 @@ export default function Home() {
 
       <nav className={styles.main_navbar}>
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Blogs</li>
-          <li>Contact</li>
+          <Link href='/' legacyBehavior><a><li>Home</li></a></Link>
+          <Link href='/about' legacyBehavior><a><li>About</li></a></Link>
+          <Link href='/blog' legacyBehavior><a><li>Blog</li></a></Link>
+          <Link href='/contact' legacyBehavior><a><li>Contact</li></a></Link>
         </ul>
       </nav>
 
@@ -31,7 +36,8 @@ export default function Home() {
           A Blog for coders written by a coder
         </p>
 
-        <div className="blogs">
+        {/* <div className={`${style1.con} ${style2.con}`}> */}
+        <div>
           <h2>Popular Blogs</h2>
           <div className="blogItem">
             <h3>How to learn NextJs in 2024?</h3>
