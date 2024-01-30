@@ -1,18 +1,19 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
-import styles from '@/styles/Home.module.css'
-import Dummy from '@/components/dummy'
+import styles from '../styles/Home.module.css'
 
 
 export default function Home() {
   return (
     <div className={styles.container}>
-      <Dummy/>
       <style jsx>
         {`
-          .mySpan {
-            color: red
+          h2 {
+            font-size: 38px;
+          }
+
+          h3 {
+            font-size: 28px;
           }
         `}
       </style>
@@ -23,56 +24,40 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <nav className={styles.main_navbar}>
-        <ul>
-          <Link href='/' legacyBehavior><a><li>Home</li></a></Link>
-          <Link href='/about' legacyBehavior><a><li>About</li></a></Link>
-          <Link href='/blog' legacyBehavior><a><li>Blog</li></a></Link>
-          <Link href='/contact' legacyBehavior><a><li>Contact</li></a></Link>
-        </ul>
-      </nav>
-
       <main className={styles.main}>
         <h1 className={styles.title}>
-          <span className='mySpan dummy'>Sitepoint Blog</span>
+          <span className='dummy'>Sitepoint Blog</span>
         </h1>
+
+        <div className={styles.imagewrap}>
+          <Image className={styles.myImg} src='/home.jpg' width={284} height={284}></Image>
+        </div>
 
         <p className={styles.description}>
           A Blog for coders written by a coder
         </p>
 
         <div>
-          <h2>Popular Blogs</h2>
+          <h2>Latest Blogs</h2>
           <div className="blogItem">
-            <h3>How to learn NextJs in 2024?</h3>
+            <h3>How to learn NextJs?</h3>
             <p>NextJs is an modified version of React which is used for both frontend and backend development</p>
           </div>
 
           <div className="blogItem">
-            <h3>How to learn NextJs in 2024?</h3>
+            <h3>How to learn NextJs?</h3>
             <p>NextJs is an modified version of React which is used for both frontend and backend development</p>
           </div>
 
           <div className="blogItem">
-            <h3>How to learn NextJs in 2024?</h3>
+            <h3>How to learn NextJs?</h3>
             <p>NextJs is an modified version of React which is used for both frontend and backend development</p>
           </div>
         </div>
-
-
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
+        
       </footer>
     </div>
   )
