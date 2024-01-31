@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 
@@ -30,7 +29,7 @@ export default function Home() {
         </h1>
 
         <div className={styles.imagewrap}>
-          <Image className={styles.myImg} src='/home.jpg' width={284} height={284}></Image>
+          <img className={styles.myImg} src='/home.jpg' width={284} height={284} alt='sitepoint blog image' />
         </div>
 
         <p className={styles.description}>
