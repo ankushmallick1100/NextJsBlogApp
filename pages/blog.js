@@ -17,7 +17,7 @@ const Blog = (props) => {
             <Link href={`/blogpost/${blogItem.slug}`}>
               <h3 className={styles.blogItemh3}>{blogItem.title}</h3>
             </Link>
-            <p className={styles.blogItemP}>{blogItem.content.substr(0, 140)}...</p>
+            <p className={styles.blogItemP}>{blogItem.metadesc.substr(0, 140)}...</p>
           </div>
         })}
       </main>
