@@ -3,8 +3,6 @@ import styles from '../styles/Blog.module.css'
 import Link from 'next/link'
 import * as fs from 'fs'
 
-// Step 1: Collect all the files from blogdata directory
-// Step 2: Iterate through them and display them
 
 const Blog = (props) => {
   const [blogs, setBlogs] = useState(props.allBlogs)
@@ -18,6 +16,9 @@ const Blog = (props) => {
               <h3 className={styles.blogItemh3}>{blogItem.title}</h3>
             </Link>
             <p className={styles.blogItemP}>{blogItem.metadesc.substr(0, 140)}...</p>
+            <Link href={`/blogpost/${blogItem.slug}`}>
+              <button className={styles.btn}>Read More</button>
+            </Link>
           </div>
         })}
       </main>
@@ -36,7 +37,7 @@ export async function getStaticProps(context) {
   }
 
   return {
-    props: {allBlogs},
+    props: { allBlogs },
   }
 }
 
