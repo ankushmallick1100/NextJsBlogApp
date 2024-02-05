@@ -35,3 +35,10 @@
   margin-bottom: 8px;
   font-size: 13px;
 }
+
+@media only screen and (max-width: 600px) {
+  .container {
+    max-width: 89vw;
+    margin: auto;
+  }
+}

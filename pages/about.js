@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from '../styles/About.module.css'
 
-
 const About = () => {
   return (
     <div className={styles.container}>
@@ -21,8 +20,6 @@ const About = () => {
 
       <h2>Contact us</h2>
       <p>You can contact us through the contact page. In contact page, give your name, email address, phone number, and the message that you will sent to us. We will keep touch with you with your given email address.</p>
-
-
     </div>
   )
 }

@@ -19,7 +19,6 @@ const Contact = () => {
     })
       .then(response => response.text())
       .then((data) => {
-        console.log("Success : ", data)
         alert("Thanks for contacting us.")
         setName('')
         setEmail('')
@@ -60,7 +59,7 @@ const Contact = () => {
           <div id="emailHelp" className={styles.formText}>We'll never share your email with anyone else.</div>
         </div>
         <div className={styles.mb3}>
-          <label htmlFor="phone" className={styles.formLabel}>Phone number</label>
+          <label htmlFor="phone" className={styles.formLabel}>Phone</label>
           <input className={styles.input} type="phone" id="phone" name="phone" value={phone} onChange={handleChange} required />
         </div>
         <div className={styles.mb3}>
