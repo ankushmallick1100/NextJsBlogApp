@@ -28,3 +28,8 @@
   margin-bottom: 8px;
   font-size: 13px;
 }
+
+.authorName {
+  margin-top: 7px;
+  font-weight: 500;  
+}

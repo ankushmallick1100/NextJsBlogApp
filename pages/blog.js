@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styles from '../styles/Blog.module.css'
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Link from 'next/link'
+import Head from 'next/head'
 import * as fs from 'fs'
 
 const Blog = (props) => {
@@ -17,6 +18,9 @@ const Blog = (props) => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Blog</title>
+      </Head>
       <main className={styles.main}>
         <InfiniteScroll
           dataLength={blogs.length}
@@ -34,6 +38,7 @@ const Blog = (props) => {
               <Link href={`/blogpost/${blogItem.slug}`}>
                 <h3 className={styles.blogItemh3}>{blogItem.title}</h3>
               </Link>
+              <p className={styles.authorName}>Author: {blogItem.author}</p>
               <p className={styles.blogItemP}>{blogItem.metadesc.substr(0, 140)}...</p>
               <Link href={`/blogpost/${blogItem.slug}`}>
                 <button className={styles.btn}>Read More</button>
@@ -53,7 +58,7 @@ export async function getStaticProps(context) {
   let allBlogs = []
   for (let i = 0; i < 2; i++) {
     const item = data[i]
-    myFile = await fs.promises.readFile(('blogdata/' + item), 'utf-8')
+    myFile = await fs.promises.readFile(('blogdata/' + item))
     allBlogs.push(JSON.parse(myFile))
   }
 

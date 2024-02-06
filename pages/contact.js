@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import styles from '../styles/Contact.module.css'
+import Head from 'next/head'
+
 
 const Contact = () => {
   const [name, setName] = useState('')
@@ -47,6 +49,9 @@ const Contact = () => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Contact</title>
+      </Head>
       <h1>Contact Us</h1>
       <form onSubmit={handleSubmit}>
         <div className={styles.mb3}>
@@ -56,7 +61,7 @@ const Contact = () => {
         <div className={styles.mb3}>
           <label htmlFor="email" className={styles.formLabel}>Email address</label>
           <input className={styles.input} type="email" id="email" name="email" value={email} onChange={handleChange} aria-describedby="emailHelp" required />
-          <div id="emailHelp" className={styles.formText}>We'll never share your email with anyone else.</div>
+          <div id="emailHelp" className={styles.formText}>We will never share your email with anyone else.</div>
         </div>
         <div className={styles.mb3}>
           <label htmlFor="phone" className={styles.formLabel}>Phone</label>
